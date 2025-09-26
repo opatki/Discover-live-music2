@@ -17,7 +17,7 @@ async function renderShows() {
             bottomContainer.classList.add('bottom-container')
 
             const eventName = document.createElement('h3')
-            eventName.textContent = show.eventName
+            eventName.textContent = show.eventname
             bottomContainer.appendChild(eventName)
 
             const artists = document.createElement('p')
@@ -26,7 +26,7 @@ async function renderShows() {
 
 
             const ticketPrice = document.createElement('p')
-            ticketPrice.textContent = "Price: " + show.ticketPrice
+            ticketPrice.textContent = "Price: " + show.ticketprice
             bottomContainer.appendChild(ticketPrice)
 
             const link = document.createElement('a')
@@ -68,15 +68,15 @@ async function renderShow() {
 
     if (show) {
         document.getElementById('image').src = show.image
-        document.getElementById('name').textContent = show.eventName
+        document.getElementById('name').textContent = show.eventname
         document.getElementById('artists').textContent = show.artists.length > 1
                 ? `Artists: ${show.artists.slice(0, -1).join(", ")} and ${show.artists.slice(-1)}`
                 : `Artist: ${show.artists.join("")}`
-        document.getElementById('price').textContent = 'Price: ' + show.ticketPrice
-        document.getElementById('time').textContent = 'Time: ' + show.dateTime
+        document.getElementById('price').textContent = 'Price: ' + show.ticketprice
+        document.getElementById('time').textContent = 'Time: ' + show.datetime
         document.getElementById('venue').textContent = 'Venue: ' + show.venue
         document.getElementById('genre').textContent = 'Genre: ' + show.genre
-        document.title = `StageScout - ${show.eventName}`
+        document.title = `StageScout - ${show.eventname}`
     } else {
         const message = document.createElement('h2')
         message.textContent = 'No Shows Available 😞'

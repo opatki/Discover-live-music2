@@ -1,6 +1,6 @@
 import { pool } from '../config/database.js'
 
-async function getShows(req, res) {
+export async function getShows(req, res) {
     try {
         const result = await pool.query("SELECT * from shows ORDER BY id ASC")
         res.status(200).json(result.rows)
@@ -10,4 +10,3 @@ async function getShows(req, res) {
     }
 }
 
-export default getShows
